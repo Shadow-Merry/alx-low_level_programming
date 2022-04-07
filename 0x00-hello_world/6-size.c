@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(void)
+int main()
 {
 	int a;
 	long int b;
@@ -11,5 +11,5 @@ int main(void)
 	print("Size of an long int: %lu byte(s)\n", (unsigned long)sizeof(b));
 	print("Size of a long long int: %lu byte(s)\n", (unsigned long)sizeof(b));
 	printf("Size of a float: %lu byte(s)\n", (unsigned long)sizeof(f));
-	return (0);
+	return 0;
 }
