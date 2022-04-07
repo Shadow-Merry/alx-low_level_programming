@@ -1,5 +1,5 @@
-#include <stdio.h>
-int main (void)
+#include<stdio.h>
+int main(void)
 {
 	int a;
 	long int b;
