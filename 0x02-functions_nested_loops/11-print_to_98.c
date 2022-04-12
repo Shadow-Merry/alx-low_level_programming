@@ -14,8 +14,11 @@ void print_to_98(int n)
 		for (number = n; number <= 98; number++)
 		{
 			_putchar(number + '0')
-			_putchar(',');
-			_putchar(' ');
+			if (number != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
 	if (n > 98)
