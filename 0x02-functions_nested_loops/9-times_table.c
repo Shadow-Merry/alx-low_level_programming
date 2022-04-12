@@ -16,6 +16,7 @@ void times_table(void)
 			_putchar(row * col);
 			_putchar(',');
 		}
+		_putchar('$');
 		_putchar('\n');
 	}
 }
