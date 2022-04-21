@@ -10,7 +10,8 @@ char *cap_string(char *s)
 	int i;
 	int x;
 	int cap = 32;
-	int separators[] = {',', ';', '.', '?', '"', '(', ')', '{', '}', ' ', '\n', '\t'};
+
+	int separators[] = {',', ';', '.', '?', '(', ')', '{', '}', ' ', '\n', '\t'};
 
 	for (i = 0; n[i] != '\0'; i++)
 	{
@@ -23,7 +24,7 @@ char *cap_string(char *s)
 
 		for (x = 0; x <= 12; x++)
 		{
-			if (n[i] == separators[x])
+			if (n[i] == separators[x] || n[i] == '"')
 			{
 				x = 12;
 				cap = 32;
