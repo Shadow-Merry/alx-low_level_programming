@@ -7,28 +7,20 @@
  */
 char *cap_string(char *s)
 {
-	int i;
-	int j;
-	char c[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 10, 9};
+	int a = 0, i;
+	int cspc = 13;
+	char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
-	i = 0;
-
-	while (str[i] != '\0')
+	while (s[a])
 	{
-		if (i == 0 && str[i] >= 97 && str[i] <= 122)
+		i = 0;
+		while (i < cspc)
 		{
-			str[i] = str[i] - 32;
+			if ((a == 0 || s[a - 1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
+				s[a] -= 32;
+			i++;
 		}
-		j = 0;
-		while (c[j] != '\0')
-		{
-			if (c[j] == str[i] && (str[i + 1] >= 97 && str[i + 1] <= 122))
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-			j++;
-		}
-		i++;
+		a++;
 	}
-	return (str);
+	return (s);
 }
