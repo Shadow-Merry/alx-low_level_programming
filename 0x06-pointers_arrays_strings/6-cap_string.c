@@ -8,28 +8,27 @@
 char *cap_string(char *s)
 {
 	int i;
-	int x;
-	int cap = 32;
+	int j;
+	char c[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 10, 9};
 
-	int separators[] = {',', ';', '.', '?', '(', ')', '{', '}', ' ', '\n', '\t'};
+	i = 0;
 
-	for (i = 0; n[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-		if (n[i] >= 'a' && n[i] <= 'z')
+		if (i == 0 && str[i] >= 97 && str[i] <= 122)
 		{
-			n[i] = n[i] - cap;
+			str[i] = str[i] - 32;
 		}
-
-		cap = 0;
-
-		for (x = 0; x <= 12; x++)
+		j = 0;
+		while (c[j] != '\0')
 		{
-			if (n[i] == separators[x] || n[i] == '"')
+			if (c[j] == str[i] && (str[i + 1] >= 97 && str[i + 1] <= 122))
 			{
-				x = 12;
-				cap = 32;
+				str[i + 1] = str[i + 1] - 32;
 			}
+			j++;
 		}
+		i++;
 	}
-	return (n);
+	return (str);
 }
