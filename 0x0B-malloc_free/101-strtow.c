@@ -5,7 +5,6 @@
 /**
  * strtow - concatenates all the arguments of your program
  * @str: string
- * @av: arguments
  * Return: a pointer to a new string
  */
 char **strtow(char *str)
@@ -59,6 +58,6 @@ char **strtow(char *str)
 			j++;
 		}
 	}
-		p[j] = NULL;
-		return (p);
+	p[j] = NULL;
+	return (p);
 }
